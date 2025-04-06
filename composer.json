@@ -1,8 +1,8 @@
 {
-    "name": "u0_a351/test-api",
+    "name": "sushil/restful-api",
     "autoload": {
         "psr-4": {
-            "U0A351\\TestApi\\": "src/"
+            "Restful\\Api\\": "src/"
         }
     },
     "authors": [
@@ -11,5 +11,7 @@
             "email": "sushilkumbhar77@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "php": "^8.2"
+    }
 }
