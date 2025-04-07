@@ -3,12 +3,12 @@
     "description": "RESTful API",
     "type": "project",
     "require": {
-        "php": "^8.4"
+        "php": "^8.2|^8.3|^8.4"
     },
     "license": "Apache-2.0",
     "autoload": {
         "psr-4": {
-            "Sushil\\RestfulApi\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [
@@ -17,5 +17,6 @@
             "email": "sushilkumbhar77@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
