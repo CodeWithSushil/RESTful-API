@@ -1,20 +1,19 @@
 <?php
+define('APP_ROOT', __DIR__);
 
-//$url = 'http://localhost:8080/rest/v1/test';
-$url = 'https://www.google.co.in';
-$ch = curl_init();
+require_once APP_ROOT.'/vendor/autoload.php';
 
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+spl_autoload_register(function($class){
+  
+  $file = str_replace("\\", DIRECTORY_SEPARATOR, $class.'.php');
+	$path = APP_ROOT.'/app/'.$file;
+  
+  if(file_exists($path)){
+    require_once($path);
+	}
+});
 
-$result = curl_exec($ch);
+session_start();
 
-echo '<pre>';
-print_r($result);
-echo '</pre>';
 
-if(curl_error($ch)){
-  echo "Error: ". curl_error($ch);
-}
 
-curl_close($ch);
